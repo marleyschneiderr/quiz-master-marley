@@ -18,20 +18,39 @@ var ClickStartButton = document.getElementById('button-start');
 // THEN a timer starts and I am presented with a question
     // Add an event listener for the start button
 
-let start = document.querySelector(#button-start);
+// let start = document.querySelector(#button-start);
 
-start.addEventListener ("click", function()
-    var timeEl = document.querySelector(".timer");
-    var secondsLeft = 75;
+// start.addEventListener ("click", function()
+  //   var timeEl = document.querySelector(".timer");
+   // var secondsLeft = 75;
+// )
 
+const startButton = document.getElementById("start-button");
+    startButton.addEventListener("click", startQuiz);
 
+//startQuiz function that will start the timer, present the 1st question, bind click event on options
+function startQuiz() {
+    // start timer
+    startTimer();
 
+    // 1st question shows up
+    presentQuestion();
 
+    //bind clikc event on options
+    bindOptionClickEvent();
+}
 
-
-
-)
-
+// start timer and update the timer display on the page
+function startTimer() {
+    let time = 75;
+    const timerInterval = setInterval(function() {
+        time --;
+        DocumentTimeline.getElementById("timer").innerHTML = time;
+        if (time === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
 
 // WHEN I answer a question
 // THEN I am presented with another question
