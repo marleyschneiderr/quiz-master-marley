@@ -16,14 +16,6 @@ var ClickStartButton = document.getElementById('button-start');
 
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
-    // Add an event listener for the start button
-
-// let start = document.querySelector(#button-start);
-
-// start.addEventListener ("click", function()
-  //   var timeEl = document.querySelector(".timer");
-   // var secondsLeft = 75;
-// )
 
 const startButton = document.getElementById("start-button");
     startButton.addEventListener("click", startQuiz);
@@ -45,11 +37,31 @@ function startTimer() {
     let time = 75;
     const timerInterval = setInterval(function() {
         time --;
-        DocumentTimeline.getElementById("timer").innerHTML = time;
+        document.getElementById("timer").innerHTML = time;
         if (time === 0) {
             clearInterval(timerInterval);
         }
     }, 1000);
+}
+
+// present the first question and options on the page
+function presentQuestion() {
+    const question = "Inside which HTML element do we put the JavaScript?";
+    const options = ["<script>", "<js>", "<scripting>", "<javascript>"]
+}
+
+function bindOptionClickEvent() {
+    const options = document.querySelectorAll(".option");
+    options.forEach(function(option) {
+        option.addEventListener("click", function() {
+            // Check if the selected option is right
+            if (this.innerHTML === "<script>") {
+                console.log("CORRECT!");
+            } else {
+                console.log("WRONG!");
+            }
+        });
+    });
 }
 
 // WHEN I answer a question
