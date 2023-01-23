@@ -184,18 +184,52 @@ getNewQuestion = () => {
 // keeping track of score throughout the quiz
         return window.location.assign('/end.html');
     }
-// this is going to be question 1 of 6, 2 of 6, etc. - caculates what question we are on are on a provides a percentage 
+// this is going to be question 1 of 6, 2 of 6, etc. - calculates what question we are on and provides a percentage 
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    // keep track of what question we are on 
     currentQuestion = availableQuestions[questionsIndex];
+    // the question that we are on, going to know what question to ask 
     question.innerText = currentQuestion.question;
 
     choices.forEach(choice => {
+        // know what choice we are clicking on 
         const number = choice.dataset['number'];
-        choice.innerText = currentQuestion[]
-    })
+        choice.innerText = currentQuestion['choice' + number];
+    });
+    //inserts new questions in the array, goes with questionsIndex 11 lines up from this one
+    availableQuestions.splice(questionsIndex, 1);
+
+    acceptingAnswers = true;
 
 }
+
+choices.forEach(choice => {
+    choice.addEventListener('click', e => {
+        if(!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+
+        // if you get the question correct, you will increase your score by 100 points
+        let classToApply = selectedAnswer = currentQuestion.answer ? 'correct' : 'incorrect';
+
+        if(classToApply === 'correct') {
+            incrementScore(SCORE_POINTS);
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply);
+        // whenever we answer a question, it will stay on the screen to answer
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            // call next question
+            getNewQuestion()
+
+        }, 1000);
+
+    })
+});
