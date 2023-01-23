@@ -11,3 +11,72 @@ body {
     font-size: 3rem;
     min-width: 75rem;
 }
+
+/* allowing you to hover over each choice (A, B, C, D) to select your answer, making it clickable with color */
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(247, 127, 6, 0.5);
+    transform: scale (1.02);
+    transform: transform 100ms;
+}
+
+.choice-prefix {
+    padding: 2rem 2.5rem;
+    color: white;
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+
+/* Activating green when answer is correct in javascript */
+.correct {
+    background: linear-gradient(green);
+}
+
+/* Activating green when answer is correct in javascript */
+.incorrect {
+    background: linear-gradient(red);
+}
+
+/* Research showed to use hud (as a id, heads up display) styling starts here */
+#hud {
+    display: flex;
+    /* pushes this out to the edge of the screen */
+    justify-content: space-between;
+
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+/* loading bar that shows how many more questions you have left */
+#progressBar {
+    width: 20rem;
+    height: 3rem;
+    border: 0.2rem solid rgb(223, 11, 142);
+    margin-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background: rgb(223, 11, 142);
+    width: 0%
+}
+
+/* see clickable answers in a smaller screen */
+@media screen and (max-width: 768px) {
+    .choice-container {
+        min-width: 35rem;
+    }
+}
+
