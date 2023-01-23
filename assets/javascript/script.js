@@ -162,5 +162,40 @@ let questions = [ {
     choice3: '//',
     choice4: '$$',
     answer: 3,
-},
-]
+}
+];
+
+// create another constant, these will stay the same no matter what
+const SCORE_POINTS = 300;
+const MAX_QUESTIONS = 6;
+
+// start game function
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    getNewQuestion();
+}
+
+// function to get new question
+getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score);
+// keeping track of score throughout the quiz
+        return window.location.assign('/end.html');
+    }
+// this is going to be question 1 of 6, 2 of 6, etc. - caculates what question we are on are on a provides a percentage 
+    questionCounter++
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion[]
+    })
+
+}
