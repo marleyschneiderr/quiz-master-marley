@@ -76,7 +76,7 @@ body {
 
 /* see clickable answers in a smaller screen */
 @media screen and (max-width: 768px) {
-    .choice-container {
+    .answer-container {
         min-width: 35rem;
     }
 }

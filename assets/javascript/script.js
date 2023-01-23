@@ -112,55 +112,55 @@ let availableQuestions = [];
 // array with question objects in it
 let questions = [ {
     question: 'Which of the following keywords is used to define a variable in JavaScript?',
-    choice1: 'var',
-    choice2: 'let',
-    choice3: 'Both A & B',
-    choice4: 'None of the above',
+    answer1: 'var',
+    answer2: 'let',
+    answer3: 'Both A & B',
+    answer4: 'None of the above',
     answer: 3,
 },
 
 {
     question: 'Which of the following methods is used to access HTML elements using JavaScript?',
-    choice1: 'getElementbyId()',
-    choice2: 'getElementsbyClassName()',
-    choice3: 'Both A & B',
-    choice4: 'None of the above',
+    answer1: 'getElementbyId()',
+    answer2: 'getElementsbyClassName()',
+    answer3: 'Both A & B',
+    answer4: 'None of the above',
     answer: 3,
 },
 
 {
     question: 'How can a datatype be declared to be a constant type?',
-    choice1: 'const',
-    choice2: 'var',
-    choice3: 'let',
-    choice4: 'constant',
+    answer1: 'const',
+    answer2: 'var',
+    answer3: 'let',
+    answer4: 'constant',
     answer: 1,
 },
 
 {
     question: 'Which function is used to serialize an object into a JSON string in JavaScript?',
-    choice1: 'stringify()',
-    choice2: 'parse()',
-    choice3: 'convert()',
-    choice4: 'None of the above',
+    answer1: 'stringify()',
+    answer2: 'parse()',
+    answer3: 'convert()',
+    answer4: 'None of the above',
     answer: 1,
 },
 
 {
     question: 'How do you stop an interval timer in JavaScript?',
-    choice1: 'clearTimer',
-    choice2: 'clearInterval',
-    choice3: 'intervalOver',
-    choice4: 'clearOver',
+    answer1: 'clearTimer',
+    answer2: 'clearInterval',
+    answer3: 'intervalOver',
+    answer4: 'clearOver',
     answer: 2,
 },
 
 {
     question: 'How do you write a comment in JavaScript?',
-    choice1: '/* */',
-    choice2: '#',
-    choice3: '//',
-    choice4: '$$',
+    answer1: '/* */',
+    answer2: '#',
+    answer3: '//',
+    answer4: '$$',
     answer: 3,
 }
 ];
@@ -195,10 +195,10 @@ getNewQuestion = () => {
     // the question that we are on, going to know what question to ask 
     question.innerText = currentQuestion.question;
 
-    choices.forEach(choice => {
-        // know what choice we are clicking on 
-        const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
+    answers.forEach(answer => {
+        // know what answer we are clicking on 
+        const number = answer.dataset['number'];
+        answer.innerText = currentQuestion['answer' + number];
     });
     //inserts new questions in the array, goes with questionsIndex 11 lines up from this one
     availableQuestions.splice(questionsIndex, 1);
@@ -207,8 +207,8 @@ getNewQuestion = () => {
 
 }
 
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
+answers.forEach(answer => {
+    answer.addEventListener('click', e => {
         if(!acceptingAnswers) return;
 
         acceptingAnswers = false;
@@ -216,7 +216,7 @@ choices.forEach(choice => {
         const selectedAnswer = selectedChoice.dataset['number'];
 
         // if you get the question correct, you will increase your score by 100 points
-        let classToApply = selectedAnswer = currentQuestion.answer ? 'correct' : 'incorrect';
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS);
