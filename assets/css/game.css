@@ -2,30 +2,30 @@ body {
     color: fff;
 }
 
-.choice-container {
+.answer-container {
     display: flex;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     width: 100%;
     border-radius: 4px;
     background: rgb(255, 148, 18);
     font-size: 3rem;
-    min-width: 75rem;
+    min-width: 80rem;
 }
 
 /* allowing you to hover over each choice (A, B, C, D) to select your answer, making it clickable with color */
-.choice-container:hover {
+.answer-container:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(247, 127, 6, 0.5);
     transform: scale (1.02);
     transform: transform 100ms;
 }
 
-.choice-prefix {
+.answer-prefix {
     padding: 2rem 2.5rem;
     color: white;
 }
 
-.choice-text {
+.answer-text {
     padding: 2rem;
     width: 100%;
 }
@@ -42,7 +42,7 @@ body {
 
 /* Research showed to use hud (as a id, heads up display) styling starts here */
 #hud {
-    display: flex;
+   /* display: flex; */
     /* pushes this out to the edge of the screen */
     justify-content: space-between;
 
@@ -51,6 +51,7 @@ body {
 .hud-prefix {
     text-align: center;
     font-size: 2rem;
+    color: white;
 }
 
 .hud-main-text {

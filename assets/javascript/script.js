@@ -94,4 +94,11 @@
 
 // quiz variables 
 
+// select items to target 
+// using document query selector - it can target both class and ids
+const question = document.querySelector('#question');
+const answers = Array.from(document.querySelectorAll('.answer-text'));
+const progressText = document.querySelector('#progressText');
+const scoreText = document.querySelector('#score');
+const progressBarFull = document.querySelector('#progressBarFull');
 
