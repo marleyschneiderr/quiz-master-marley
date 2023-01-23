@@ -102,3 +102,65 @@ const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 
+// create let variables for current question selection
+let currentQuestion = 0;
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
+
+// array with question objects in it
+let questions = [ {
+    question: 'Which of the following keywords is used to define a variable in JavaScript?',
+    choice1: 'var',
+    choice2: 'let',
+    choice3: 'Both A & B',
+    choice4: 'None of the above',
+    answer: 3,
+},
+
+{
+    question: 'Which of the following methods is used to access HTML elements using JavaScript?',
+    choice1: 'getElementbyId()',
+    choice2: 'getElementsbyClassName()',
+    choice3: 'Both A & B',
+    choice4: 'None of the above',
+    answer: 3,
+},
+
+{
+    question: 'How can a datatype be declared to be a constant type?',
+    choice1: 'const',
+    choice2: 'var',
+    choice3: 'let',
+    choice4: 'constant',
+    answer: 1,
+},
+
+{
+    question: 'Which function is used to serialize an object into a JSON string in JavaScript?',
+    choice1: 'stringify()',
+    choice2: 'parse()',
+    choice3: 'convert()',
+    choice4: 'None of the above',
+    answer: 1,
+},
+
+{
+    question: 'How do you stop an interval timer in JavaScript?',
+    choice1: 'clearTimer',
+    choice2: 'clearInterval',
+    choice3: 'intervalOver',
+    choice4: 'clearOver',
+    answer: 2,
+},
+
+{
+    question: 'How do you write a comment in JavaScript?',
+    choice1: '/* */',
+    choice2: '#',
+    choice3: '//',
+    choice4: '$$',
+    answer: 3,
+},
+]
