@@ -146,10 +146,14 @@ answers.forEach(answer => {
         const selectedAnswer = selectedChoice.dataset['number'];
 
         // if you get the question correct, you will increase your score by 100 points
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        let classToApply = 
+            selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
+        // taking 10 seconds off everytime a question is answered incorrectly 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS);
+        } else if (classToApply === "incorrect") {
+            secondsLeft -= 10;
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
