@@ -152,11 +152,6 @@ answers.forEach(answer => {
             incrementScore(SCORE_POINTS);
         }
 
-        // if question is wrong, take off time
-        if (buttonEl.value !== questions[currentQuestion].answer) {
-            // penalize time
-            time -= 15;
-
         selectedChoice.parentElement.classList.add(classToApply);
         // whenever we answer a question, it will stay on the screen to answer
         setTimeout(() => {
