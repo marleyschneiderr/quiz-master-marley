@@ -13,6 +13,12 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let pauseInterval = 0;
+let secondsLeft = 76;
+
+// timer variable defined 
+var timeEl = document.querySelector("#timer");
+
  
 // array with question objects in it
 let questions = [ {
@@ -74,17 +80,8 @@ let questions = [ {
 const SCORE_POINTS = 300;
 const MAX_QUESTIONS = 6;
 
-// start game function
-startGame = () => {
-    startTimer()
-    questionCounter = 0;
-    score = 0;
-    availableQuestions = [...questions];
-    getNewQuestion();
-}
-
 // timer 
-startGame.addEventListener("click", function () {
+const startTimer = function () {
     // We are checking zero because its originally set to zero
     if (pauseInterval === 0) {
         pauseInterval = setInterval(function () {
@@ -99,7 +96,16 @@ startGame.addEventListener("click", function () {
         }, 1000);
     }
   //  mainScreen(currentQuestion);
-});
+};
+
+// start game function
+startGame = () => {
+    startTimer()
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    getNewQuestion();
+}
 
 // function to get new question
 getNewQuestion = () => {
