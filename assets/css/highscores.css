@@ -3,6 +3,7 @@ body {
 }
 
 #highScoresList {
+    color: white;
     margin-bottom: 3.5rem;
     list-style: none;
 }
