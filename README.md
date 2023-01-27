@@ -10,7 +10,7 @@ An application that an a student can use to study for a quiz on javascript mater
 
 ## Link to Live WebPage
 
-https://marleyschneiderr.github.io/need-a-password/
+https://marleyschneiderr.github.io/quiz-master-marley/
 
 ## Installation
 
@@ -24,7 +24,7 @@ Created by Marley Schneider, Github: https://github.com/marleyschneiderr
 
 This website was designed to serve as a quiz for a user who is currently learning javascript. This quiz is available for students and teachers who want to test or refresh their knowledge on javascript.
 
-![Screenshot of Full Webpage](assets/images/pass-gen.png)
+![Screenshot of Full Webpage](assets/images/quiz.png)
 
 ## Credits
 
