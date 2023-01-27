@@ -153,7 +153,7 @@ answers.forEach(answer => {
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS);
         } else if (classToApply === "incorrect") {
-            secondsLeft -= 15;
+            secondsLeft -= 12;
         }
 
         selectedChoice.parentElement.classList.add(classToApply);

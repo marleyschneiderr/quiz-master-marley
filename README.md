@@ -24,7 +24,7 @@ Created by Marley Schneider, Github: https://github.com/marleyschneiderr
 
 This website was designed to serve as a quiz for a user who is currently learning javascript. This quiz is available for students and teachers who want to test or refresh their knowledge on javascript.
 
-![Screenshot of Full Webpage](assets/images/quiz.png)
+![Screenshot of Full Webpage](assets/images/quiz-pic.png)
 
 ## Credits
 
