@@ -112,7 +112,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
 // keeping track of score throughout the quiz
-        return window.location.assign('/end.html');
+        return window.location.assign('./end.html');
     }
 // this is going to be question 1 of 6, 2 of 6, etc. - calculates what question we are on and provides a percentage 
     questionCounter++
