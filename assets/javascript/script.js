@@ -109,6 +109,9 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+// timer 
+var timeEl = document.querySelector("#timer");
+
 // array with question objects in it
 let questions = [ {
     question: 'Which of the following keywords is used to define a variable in JavaScript?',
@@ -239,5 +242,5 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 
-startGame ()
+startGame ();
 
