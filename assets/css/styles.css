@@ -23,12 +23,12 @@ h2 {
     margin-bottom: 4rem;
 }
 
-.timer {
-    float: right;
-    font-size: 215px;
-    font-weight: bold;
+#timer {
     color: white;
-}
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+} 
 
 .container {
     width: 100vw;

@@ -25,6 +25,13 @@ body {
     color: white;
 }
 
+#timer {
+    color: white;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .answer-text {
     padding: 2rem;
     width: 100%;
