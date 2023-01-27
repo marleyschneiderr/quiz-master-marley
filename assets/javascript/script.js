@@ -130,7 +130,7 @@ getNewQuestion = () => {
         const number = answer.dataset['number'];
         answer.innerText = currentQuestion['answer' + number];
     });
-    //inserts new questions in the array, goes with questionsIndex 11 lines up from this one
+    //inserts new questions in the array, goes with questionsIndex 
     availableQuestions.splice(questionsIndex, 1);
 
     acceptingAnswers = true;
@@ -151,6 +151,11 @@ answers.forEach(answer => {
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS);
         }
+
+        // if question is wrong, take off time
+        if (buttonEl.value !== questions[currentQuestion].answer) {
+            // penalize time
+            time -= 15;
 
         selectedChoice.parentElement.classList.add(classToApply);
         // whenever we answer a question, it will stay on the screen to answer
