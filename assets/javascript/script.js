@@ -179,7 +179,7 @@ startGame = () => {
 
 // function to get new question
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionsCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
 // keeping track of score throughout the quiz
         return window.location.assign('/end.html');
@@ -231,5 +231,13 @@ answers.forEach(answer => {
 
         }, 1000);
 
-    })
+    });
 });
+
+incrementScore = num => {
+    score +=num;
+    scoreText.innerText = score;
+};
+
+startGame ()
+
